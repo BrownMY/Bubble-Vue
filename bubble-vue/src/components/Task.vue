@@ -1,8 +1,8 @@
 <template>
-  <div :class="[task.reminder ? 'reminder' : '', 'task']">
+  <div @dblclick="$emit('toggle-reminder', task.id)" :class="[task.reminder ? 'reminder' : '', 'task']">
     <h3>{{ task.text }}</h3>
     <p>{{ task.day }}</p>
-    <i @click="onDelete(task.id)" class="fas fa-times"></i>
+    <i @click="$emit('delete-task', task.id)" class="fas fa-times"></i>
   </div>
 </template>
 
@@ -14,11 +14,6 @@ export default {
     task: Object,
   },
 
-  methods: {
-    onDelete(id) {
-      this.$emit('delete-0tasks', id)
-    },
-  },
 };
 </script>
 
@@ -31,7 +26,7 @@ div {
 }
 
 .task {
-  background-color: rgb(138, 205, 207);
+  background-color: rgb(138, 205, 207); 
   margin: 10px;
   color: rgb(233, 248, 255);
   border-radius: 10px;
