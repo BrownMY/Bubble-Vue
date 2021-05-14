@@ -1,13 +1,20 @@
 <template>
-  <h1>New to Vue!</h1>
+  <div class='container'>
+   <h1>New to Vue!</h1> 
+   <Header title="Task Tracker"/>
+  </div>
+  
 </template>
 
 <script>
 
+import Header from './components/Header'
 
 export default {
   name: 'App',
-  components: {}
+  components: {
+    Header
+  }
 }
 </script>
 
