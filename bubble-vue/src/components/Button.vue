@@ -11,7 +11,7 @@ export default {
     },
     methods: {
         onClick() {
-            console.log('Clciekd!')
+            this.$emit('btn-click')
         }
     }
 }
@@ -22,7 +22,7 @@ export default {
         border-radius: 10px;
         padding: 10px;
         font-size: 20px;
-        color: rgb(221, 90, 167);
+        color: rgb(253, 252, 223);
         margin: 20px;
         
     }
