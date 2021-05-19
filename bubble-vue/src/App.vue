@@ -48,7 +48,8 @@ export default {
 
     deleteTask(id) {
       if (confirm("Are you sure?"))
-        this.tasks = this.tasks.filter((task) => task.id !== id);
+        this.tasks = 
+        this.tasks.filter((task) => task.id !== id);
     },
 
     toggleReminder(id) {
@@ -58,15 +59,23 @@ export default {
     },
     
     async fetchTasks() {
-      const res = await fetch("http://localhost:5000/tasks");
+      const res = await fetch('http://localhost:5000/tasks')
 
-      const data = await res.json();
+      const data = await res.json()
 
       return data;
     },
+
+    // async fetchTasks(id) {
+    //   const res = await fetch(`http://localhost:5000/tasks/${id}`)
+
+    //   const data = await res.json()
+
+    //   return data;
+    // },
   },
   async created() {
-    this.tasks = await this.fetchTasks;
+    this.tasks = await this.fetchTasks();
   },
 };
 </script>
